@@ -129,7 +129,6 @@ public:
 			}
 		}
 
-		// Add remaining elements
 		while (i < current_size) { 
 			if (i == 0 || array[i] != array[i - 1]) {
 				sum.array[k++] = array[i];
@@ -147,7 +146,7 @@ public:
 		}
 		return sum;
 	}
-	Set difference(Set other) {
+	Set difference(const Set& other) {
 
 		const size_t other_size = other.current_size;
 
@@ -174,9 +173,6 @@ public:
 			++difference.current_size;
 		}
 		return difference;
-	}
-	const std::string* get_array() {
-		return this->array;
 	}
 
 	void print()const  {
