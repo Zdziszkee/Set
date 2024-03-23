@@ -22,7 +22,7 @@ protected:
 	}
 
 public:
-	Set(size_t initial_size) : array(new std::string[initial_size]{}), capacity(initial_size), current_size(0) {}
+	explicit Set(size_t initial_size) : array(new std::string[initial_size]{}), capacity(initial_size), current_size(0) {}
 
 	~Set() {
 		delete[] array;
@@ -179,12 +179,10 @@ public:
 		return this->array;
 	}
 
-	void print() {
-		std::cout << current_size<<std::endl;
+	void print()const  {
 		for (size_t i = 0; i < current_size; i++)
 		{
 			std::cout << array[i]<<std::endl;
 		}
-		std::cout << std::endl;
 	}
 };
